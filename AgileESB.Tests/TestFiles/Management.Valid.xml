@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Management xmlns="urn:agileesb:schemas:managementdata:0.1">
+  <ReceiveEndpoints>
+    <Endpoint EndpointId="6E2DCC4E-6416-43eb-9369-17E96E0A766D" Alias="Default" Uri="net.tcp://localhost:8081/AgileESB/Default" Enabled="true" />
+  </ReceiveEndpoints>
+  <Services></Services>
+</Management>

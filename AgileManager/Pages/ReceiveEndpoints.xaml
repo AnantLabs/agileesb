@@ -1,0 +1,51 @@
+﻿<Page x:Class="AgileManager.Pages.ReceiveEndpoints"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="ReceiveEndpoints" Background="#00000000" Height="Auto" Width="Auto"
+    HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+    <Page.Resources>
+    </Page.Resources>
+    <Grid Height="Auto" Width="Auto">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <GridSplitter HorizontalAlignment="Right" Margin="0,10" Name="ListSplitter" Width="5" Background="#00000000" />
+        <StackPanel Grid.Column="0" Grid.ColumnSpan="1" Margin="0" Width="Auto" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Button Margin="5" BorderThickness="0" Background="#00000000" BorderBrush="#00000000" OverridesDefaultStyle="False" Name="NewEndpointButton">New endpoint</Button>
+            <ListBox Grid.Column="0" Grid.ColumnSpan="1" Margin="5" Name="EndpointsList" BorderThickness="0" SelectedValuePath="Id" SelectionChanged="EndpointsList_SelectionChanged" IsSynchronizedWithCurrentItem="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Path=Name}" Margin="0" ToolTip="{Binding Path=Name}" Padding="5" TextTrimming="CharacterEllipsis" Cursor="Hand" />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+        <Border Margin="5" Grid.Column="1" CornerRadius="5,5,5,5" BorderBrush="#FFDDDDDD" BorderThickness="1" Background="#FFDDDDDD">
+            <Grid Margin="5" Name="EndpointDetails" Visibility="Hidden" Background="#00000000">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="36" />
+                    <RowDefinition Height="36" />
+                    <RowDefinition Height="36" />
+                    <RowDefinition Height="36" />
+                    <RowDefinition Height="151*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.ColumnSpan="1" Grid.Row="0" Grid.RowSpan="1" Height="28" Margin="0" Name="label1" VerticalAlignment="Top">Id</Label>
+                <Label Grid.ColumnSpan="1" Grid.Row="1" Grid.RowSpan="1" Height="28" Margin="0" Name="label2" VerticalAlignment="Top">Name</Label>
+                <Label Grid.ColumnSpan="1" Grid.Row="2" Grid.RowSpan="1" Height="28" Margin="0" Name="label3" VerticalAlignment="Top">URI</Label>
+                <TextBox Grid.Column="2" Grid.Row="0" Grid.RowSpan="1" Height="21.96" Margin="5" Name="TextId" VerticalAlignment="Top" IsEnabled="False" Text="{Binding Path=Id}" />
+                <TextBox Grid.Column="2" Grid.Row="1" Grid.RowSpan="1" Height="21.96" Margin="5" Name="textBox2" VerticalAlignment="Top" Text="{Binding Path=Name}" />
+                <TextBox Grid.Column="2" Grid.Row="2" Grid.RowSpan="1" Height="21.96" Margin="5" Name="textBox3" VerticalAlignment="Top" Text="{Binding Path=Uri}" />
+                <CheckBox Grid.Row="3" Margin="5,5,5,10" Name="CheckEnabled" FlowDirection="LeftToRight" IsChecked="{Binding Path=Enabled}">Enabled</CheckBox>
+                <WrapPanel Grid.ColumnSpan="2" Grid.Row="4" Margin="5" Name="ButtonsWrap">
+                    <Button Height="23" Name="SaveButton" Width="Auto" Margin="0,0,5,0" Padding="5,1" Click="SaveButton_Click">Save changes</Button>
+                    <Button Height="23" Name="RevertButton" Width="Auto" Padding="5,1" Click="RevertButton_Click">Revert changes</Button>
+                </WrapPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

@@ -1,0 +1,70 @@
+﻿<Window x:Class="AgileManager.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="AgileManager" Height="372" Width="587" Background="#FF111111"
+    DataContext="{Binding MgmtData}">
+    <Window.Resources>
+        <Style x:Key="NavItemNormal" TargetType="ListBoxItem">
+            <Setter Property="Control.Margin" Value="0" />
+            <Setter Property="Control.Padding" Value="5" />
+            <Setter Property="Control.VerticalContentAlignment" Value="Center" />
+            <Setter Property="Foreground" Value="#FFFFFFFF" />
+            <Setter Property="Control.Cursor" Value="Hand" />
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="FontWeight" Value="Bold" />
+                </Trigger>
+                <Trigger Property="IsSelected" Value="False">
+                    <Setter Property="FontWeight" Value="Normal" />
+                </Trigger>
+            </Style.Triggers>
+            <Style.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#88FF8800" />
+                <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="#88FF8800" />
+            </Style.Resources>
+        </Style>
+    </Window.Resources>
+    <Grid Height="Auto" Width="Auto" Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="/AgileManager;component/Images/Background.png" AlignmentX="Left" AlignmentY="Top" Stretch="None" />
+        </Grid.Background>
+        <Border Grid.Row="1" Grid.Column="1" Height="Auto" Name="ChromeBorder" Width="Auto" CornerRadius="10,10,10,10" BorderThickness="1" Background="#44FFFFFF" BorderBrush="#AAFFFFFF" Margin="0,0,10,10">
+            <Border Height="Auto" Name="GlassBorder" Width="Auto" CornerRadius="5,5,5,5" BorderThickness="0" Background="White" BorderBrush="#44FFFFFF" Margin="5">
+                <Frame Height="Auto" Name="ContentFrame" VerticalAlignment="Stretch" Background="#00000000" Source="{Binding ElementName=Navigation, Path=SelectedItem.Tag}" Margin="5" NavigationUIVisibility="Hidden" />
+            </Border>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" Grid.RowSpan="1" CornerRadius="10,10,10,10" BorderThickness="1" BorderBrush="#AAFFFFFF" Background="#44FF8800" Margin="10,0,10,10">
+            <Border.BitmapEffect>
+                <DropShadowBitmapEffect />
+            </Border.BitmapEffect>
+            <Border.OpacityMask>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Color="#FFFFFFFF" Offset="0.0" />
+                    <GradientStop Color="#00FFFFFF" Offset="0.8" />
+                </LinearGradientBrush>
+            </Border.OpacityMask>
+            <ListBox BorderThickness="0" Background="#00000000" Margin="0,10" SelectedIndex="0" Name="Navigation">
+                <ListBoxItem Style="{StaticResource NavItemNormal}" Tag="Pages/ManagementRoot.xaml">Home</ListBoxItem>
+                <ListBoxItem Style="{StaticResource NavItemNormal}" Tag="Pages/ReceiveEndpoints.xaml">Receive endpoints</ListBoxItem>
+                <ListBoxItem Style="{StaticResource NavItemNormal}" Tag="Pages/Management.xaml">Services</ListBoxItem>
+                <ListBoxItem Style="{StaticResource NavItemNormal}" Tag="Pages/Management.xaml">Configuration</ListBoxItem>
+            </ListBox>
+        </Border>
+        <!-- Search area -->
+        <Border Grid.RowSpan="1" Height="Auto" Grid.Column="1" CornerRadius="5" Background="#FFFFFFFF" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" ClipToBounds="True">
+            <StackPanel FlowDirection="LeftToRight" Height="Auto" Margin="3,3,3,3" Name="SearchPanel" Width="Auto" Orientation="Horizontal">
+                <Image Width="16" Height="16" Source="/AgileManager;component/Images/find.png" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" Name="FindIcon" />
+                <TextBox Height="16" Name="SearchBox" Width="120" Margin="0" BorderThickness="0" FlowDirection="LeftToRight" Padding="0" Background="#00000000" />
+            </StackPanel>
+        </Border>
+        <GridSplitter Grid.Column="0" Grid.RowSpan="2" Height="Auto" HorizontalAlignment="Right" Margin="0" Name="MainSplitter" VerticalAlignment="Stretch" Width="10" Background="#00000000" FlowDirection="LeftToRight" />
+    </Grid>
+</Window>
