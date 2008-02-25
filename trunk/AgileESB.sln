@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileESB.Management", "AgileESB.Management\AgileESB.Management.csproj", "{0919DB8C-0055-4FAD-A665-57BA6BE4D0DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileESB.Tests", "AgileESB.Tests\AgileESB.Tests.csproj", "{AF1391DC-EF9A-420A-8608-31813D6DDFAA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{093D732D-5FC1-48B7-BD9C-B7319D0A74E0}"
+	ProjectSection(SolutionItems) = preProject
+		AgileESB.vsmdi = AgileESB.vsmdi
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileManager", "AgileManager\AgileManager.csproj", "{BDEE5899-05EC-42FC-AD6D-66BDCDC5B972}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Artwork", "Artwork", "{63E9DF6B-AC51-42BD-8B3B-EACD6C33FA04}"
+	ProjectSection(SolutionItems) = preProject
+		..\ESB\Artwork\AgileESB_Transparent.psd = ..\ESB\Artwork\AgileESB_Transparent.psd
+		..\ESB\Artwork\Background.psd = ..\ESB\Artwork\Background.psd
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = AgileESB.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0919DB8C-0055-4FAD-A665-57BA6BE4D0DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0919DB8C-0055-4FAD-A665-57BA6BE4D0DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0919DB8C-0055-4FAD-A665-57BA6BE4D0DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0919DB8C-0055-4FAD-A665-57BA6BE4D0DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF1391DC-EF9A-420A-8608-31813D6DDFAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF1391DC-EF9A-420A-8608-31813D6DDFAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF1391DC-EF9A-420A-8608-31813D6DDFAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF1391DC-EF9A-420A-8608-31813D6DDFAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDEE5899-05EC-42FC-AD6D-66BDCDC5B972}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDEE5899-05EC-42FC-AD6D-66BDCDC5B972}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDEE5899-05EC-42FC-AD6D-66BDCDC5B972}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDEE5899-05EC-42FC-AD6D-66BDCDC5B972}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
