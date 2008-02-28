@@ -38,13 +38,16 @@
                 <Label Grid.ColumnSpan="1" Grid.Row="1" Grid.RowSpan="1" Height="28" Margin="0" Name="label2" VerticalAlignment="Top">Name</Label>
                 <Label Grid.ColumnSpan="1" Grid.Row="2" Grid.RowSpan="1" Height="28" Margin="0" Name="label3" VerticalAlignment="Top">URI</Label>
                 <TextBox Grid.Column="2" Grid.Row="0" Grid.RowSpan="1" Height="21.96" Margin="5" Name="TextId" VerticalAlignment="Top" IsEnabled="False" Text="{Binding Path=Id}" />
-                <TextBox Grid.Column="2" Grid.Row="1" Grid.RowSpan="1" Height="21.96" Margin="5" Name="textBox2" VerticalAlignment="Top" Text="{Binding Path=Name}" />
-                <TextBox Grid.Column="2" Grid.Row="2" Grid.RowSpan="1" Height="21.96" Margin="5" Name="textBox3" VerticalAlignment="Top" Text="{Binding Path=Uri}" />
-                <CheckBox Grid.Row="3" Margin="5,5,5,10" Name="CheckEnabled" FlowDirection="LeftToRight" IsChecked="{Binding Path=Enabled}">Enabled</CheckBox>
-                <WrapPanel Grid.ColumnSpan="2" Grid.Row="4" Margin="5" Name="ButtonsWrap">
-                    <Button Height="23" Name="SaveButton" Width="Auto" Margin="0,0,5,0" Padding="5,1" Click="SaveButton_Click">Save changes</Button>
-                    <Button Height="23" Name="RevertButton" Width="Auto" Padding="5,1" Click="RevertButton_Click">Revert changes</Button>
-                </WrapPanel>
+                <TextBox Grid.Column="2" Grid.Row="1" Grid.RowSpan="1" Height="21.96" Margin="5" Name="EditName" VerticalAlignment="Top" Text="{Binding Path=Name}" Tag="{Binding Path=Name}" TextChanged="EditName_TextChanged" />
+                <TextBox Grid.Column="2" Grid.Row="2" Grid.RowSpan="1" Height="21.96" Margin="5" Name="EditUri" VerticalAlignment="Top" Text="{Binding Path=Uri}" Tag="{Binding Path=Uri}" TextChanged="EditUri_TextChanged" />
+                <CheckBox Grid.Row="3" Margin="5,5,5,10" Name="CheckEnabled" FlowDirection="LeftToRight" IsChecked="{Binding Path=Enabled}" Tag="{Binding Path=Enabled}" Checked="CheckEnabled_Checked" Unchecked="CheckEnabled_Checked">Enabled</CheckBox>
+                <Border Grid.ColumnSpan="2" Grid.Row="4" Margin="5" CornerRadius="3,3,3,3" BorderBrush="#FFFF8800" BorderThickness="1" Background="#FFFFEEAA" HorizontalAlignment="Stretch" VerticalAlignment="Top" Width="Auto" Height="Auto" Visibility="Collapsed" Name="ChangeNotification">
+                    <WrapPanel Margin="5" Name="ButtonsWrap" FlowDirection="LeftToRight">
+                        <Label Margin="10,0">You have made changes to this item</Label>
+                        <Button Height="23" Name="SaveButton" Width="Auto" Margin="0,0,5,0" Padding="5,1" Click="SaveButton_Click">Save changes</Button>
+                        <Button Height="23" Name="RevertButton" Width="Auto" Padding="5,1" Click="RevertButton_Click">Revert changes</Button>
+                    </WrapPanel>
+                </Border>
             </Grid>
         </Border>
     </Grid>

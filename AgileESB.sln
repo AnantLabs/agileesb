@@ -19,10 +19,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Artwork", "Artwork", "{63E9
 		..\ESB\Artwork\Background.psd = ..\ESB\Artwork\Background.psd
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileESB.Messaging", "AgileESB.Messaging\AgileESB.Messaging.csproj", "{D4EB25C9-BB9E-4C49-8FAB-C2FFEDFC2FCB}"
+EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = AgileESB.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -40,6 +39,10 @@ Global
 		{BDEE5899-05EC-42FC-AD6D-66BDCDC5B972}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDEE5899-05EC-42FC-AD6D-66BDCDC5B972}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDEE5899-05EC-42FC-AD6D-66BDCDC5B972}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4EB25C9-BB9E-4C49-8FAB-C2FFEDFC2FCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4EB25C9-BB9E-4C49-8FAB-C2FFEDFC2FCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4EB25C9-BB9E-4C49-8FAB-C2FFEDFC2FCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4EB25C9-BB9E-4C49-8FAB-C2FFEDFC2FCB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

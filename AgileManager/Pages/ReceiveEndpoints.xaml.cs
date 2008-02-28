@@ -46,12 +46,54 @@ namespace AgileManager.Pages
 
         private void RevertButton_Click( object sender, RoutedEventArgs e )
         {
+            this.EditName.Text = (string)this.EditName.Tag;
+            this.EditUri.Text = (string)this.EditUri.Tag;
+            this.CheckEnabled.IsChecked = (bool)this.CheckEnabled.Tag;
 
+            this.ChangeNotification.Visibility = Visibility.Collapsed;
         }
 
         private void SaveButton_Click( object sender, RoutedEventArgs e )
         {
             App.MgmtData.SubmitChanges();
+
+            this.ChangeNotification.Visibility = Visibility.Collapsed;
+        }
+
+        private void EditName_TextChanged( object sender, TextChangedEventArgs e )
+        {
+            this.ChangeNotification.Visibility =
+                ItemChanged() ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        private void EditUri_TextChanged( object sender, TextChangedEventArgs e )
+        {
+            this.ChangeNotification.Visibility =
+                ItemChanged() ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        private void CheckEnabled_Checked( object sender, RoutedEventArgs e )
+        {
+            this.ChangeNotification.Visibility = 
+                ItemChanged() ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        private bool ItemChanged()
+        {
+            if( (null != this.EditName.Tag) && (0 != String.Compare( this.EditName.Text, (string)this.EditName.Tag )) )
+            {
+                return true;
+            }
+            if( (null != this.EditUri.Tag) && (0 != String.Compare( this.EditUri.Text, (string)this.EditUri.Tag )) )
+            {
+                return true;
+            }
+            Console.WriteLine( String.Format( "Tag: {0}", this.CheckEnabled.Tag ) );
+            if( (null != this.CheckEnabled.Tag) && (this.CheckEnabled.IsChecked == (bool)this.CheckEnabled.Tag) )
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
